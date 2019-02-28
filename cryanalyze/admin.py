@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import SmallData, BigData
+
+admin.site.register(SmallData)
+admin.site.register(BigData)
