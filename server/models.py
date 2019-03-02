@@ -39,11 +39,11 @@ class Allergy(models.Model):
 
 class Parent(models.Model):
     name = models.CharField(max_length=30)
-    aadhar_number = models.CharField(max_length=12)
-    email = models.EmailField()
+    aadhar_number = models.CharField(max_length=12, unique=True)
+    email = models.EmailField(unique=True)
     phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$',
                                  message="Not a Phone Number")
-    phone_number = models.CharField(validators=[phone_regex], max_length=17, blank=True)  # validators should be a list
+    phone_number = models.CharField(validators=[phone_regex], max_length=17, blank=True, unique=True)  # validators should be a list
     address = models.CharField(max_length=100, null=True)
 
 
@@ -52,7 +52,7 @@ class Doctor(models.Model):
     MBBS = "MBBS"
 
     name = models.CharField(max_length=30)
-    aadhar_number = models.CharField(max_length=12)
+    aadhar_number = models.CharField(max_length=12, unique=True)
     specialization = models.CharField(max_length=10, choices=(
         (MD, "Master In Doctor"),
         (MBBS, "MBBS"),
@@ -60,10 +60,10 @@ class Doctor(models.Model):
 
     degree_proof = models.FileField()
     experience_years = models.IntegerField()
-    email = models.EmailField()
+    email = models.EmailField(unique=True)
     phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$',
                                  message="Not a Phone Number")
-    phone_number = models.CharField(validators=[phone_regex], max_length=17, blank=True)  # validators should be a list
+    phone_number = models.CharField(validators=[phone_regex], max_length=17, blank=True, unique=True)  # validators should be a list
     address = models.CharField(max_length=100)
     consultation_fee = models.IntegerField()
     working_hours = models.ManyToManyField(ConsultationTime)
@@ -80,6 +80,7 @@ class Child(models.Model):
     name = models.CharField(max_length=30)
     autistic = models.NullBooleanField()
     birthday = models.DateField()
+    aadhar_number = models.CharField(max_length=12, blank=True, unique=True)
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
     medicine_list = models.ManyToManyField(Medicine, related_name="takes")
 
