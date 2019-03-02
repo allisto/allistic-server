@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'server',
-    'cryanalyze',
+    'cry_analyze',
     'rest_framework',
 ]
 

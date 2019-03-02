@@ -1,6 +1,6 @@
 from rest_framework import routers
 
-from cryanalyze import api_views
+from cry_analyze import api_views
 
 router = routers.DefaultRouter()
 router.register(r'big-data', api_views.BigDataViewSet)
