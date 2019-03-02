@@ -1,6 +1,14 @@
 from rest_framework import serializers
 
-from .models import BigData, SmallData
+from .models import BigData, SmallData, CryAudio
+
+
+class CryAudioSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CryAudio
+        fields = (
+            'audio_file',
+        )
 
 
 class BigDataSerializer(serializers.ModelSerializer):

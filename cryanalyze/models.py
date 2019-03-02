@@ -1,6 +1,10 @@
 from django.db import models
 
 
+class CryAudio(models.Model):
+    audio_file = models.FileField()
+
+
 class SmallData(models.Model):
     # dataset in use is dataset.xlsx
 
