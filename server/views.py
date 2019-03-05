@@ -9,5 +9,7 @@ def index(request):
     return render(request, "server/index.html", args)
 
 
-def patient(request):
-    return render(request, "server/patient_page.html")
+def patient(request, post_id):
+    parent = Parent.objects.get(id=post_id)
+    args = {'parent': parent}
+    return render(request, "server/patient_page.html", args)

@@ -2,24 +2,24 @@
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en-Us">
-    <head >
-        <title>ABC</title>
-        <link rel="stylesheet" type="text/css" href="{% static "css/patient-styles.css" %}"/>
-     </head>
+<head>
+    <title>Parent : {{ parent.name }}</title>
+    <link rel="stylesheet" type="text/css" href="{% static "css/patient-styles.css" %}"/>
+</head>
 
 <body>
 <div id="container">
-   <span class="tbles" >
+   <span class="tbles">
         <img src="{% static 'img/human_pic.jpg' %}"/>
     <table id="t1">
        <caption><b>Parent's Details</b></caption>
         <tr>
             <td>ID:</td>
-            <td>1230</td>
+            <td>{{ parent.id }}</td>
         </tr>
         <tr>
             <td>Name:</td>
-            <td><b>ABC</b></td>
+            <td><b>{{ parent.name }}</b></td>
         </tr>
         <tr>
             <td>Age:</td>
@@ -45,10 +45,10 @@
 
 </span>
 
-    <span class="tbles" id="patient" >
+    <span class="tbles" id="patient">
             <img src="{% static 'img/human_pic.jpg' %}"/>
             <span class="in">
-    <table id="t2" >
+    <table id="t2">
         <caption><b>Patient's Details</b></caption>
         <tr>
                 <td>Name;</td>
@@ -69,21 +69,22 @@
      </table>
      </span>
     </span>
-  </div>
-  <div id="footerdiv">
-        <footer>
-            <center>
-                <br/>
-            <a href="aboutus.html"  target="self" rel="author"><font color="white" class="foot">About us</font></a>
+</div>
+<div id="footerdiv">
+    <footer>
+        <center>
+            <br/>
+            <a href="aboutus.html" target="self" rel="author"><font color="white" class="foot">About us</font></a>
             <br/>
             <br/>
 
-            <a href="contactus.html"  target="self" rel="author"><font color="white" class="foot" color="white">Contact</font></a>
+            <a href="contactus.html" target="self" rel="author"><font color="white" class="foot"
+                                                                      color="white">Contact</font></a>
             <br/>
             <br/>
 
         </center>
-        </footer>
-        </div>
+    </footer>
+</div>
 </body>
 </html>
