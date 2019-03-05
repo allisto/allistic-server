@@ -1,1 +1,1 @@
-web: gunicorn allistic-server.wsgi --log-file
+web: gunicorn server.wsgi --log-file
