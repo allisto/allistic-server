@@ -1,1 +1,1 @@
-web: python manage.py runserver allistic-server.wsgi
+web: gunicorn allistic-server.wsgi --log-file
