@@ -1,4 +1,12 @@
-Django==2.0.8
-djangorestframework==3.9.1
-gunicorn==19.6.0
-whitenoise==3.6
+django==2.0.8
+djangorestframework
+dj-database-url
+dj-static
+gunicorn
+Unipath
+python-decouple
+Pillow
+Markdown
+bleach
+psycopg2
+whitenoise
