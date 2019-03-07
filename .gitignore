@@ -151,3 +151,13 @@ fabric.properties
 
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
+
+allistic_server/__pycache__/settings.cpython-36.pyc
+allistic_server/__pycache__/wsgi.cpython-36.pyc
+server/__pycache__/urls.cpython-36.pyc
+server/__pycache__/views.cpython-36.pyc
+cry_analyze/migrations/
+media/
+server/migrations/
+
+*.mp3
