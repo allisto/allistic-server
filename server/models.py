@@ -43,7 +43,8 @@ class Parent(models.Model):
     email = models.EmailField(unique=True)
     phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$',
                                  message="Not a Phone Number")
-    phone_number = models.CharField(validators=[phone_regex], max_length=17, blank=True, unique=True)  # validators should be a list
+    phone_number = models.CharField(validators=[phone_regex], max_length=17, blank=True,
+                                    unique=True)  # validators should be a list
     address = models.CharField(max_length=100, null=True)
 
 
@@ -63,12 +64,37 @@ class Doctor(models.Model):
     email = models.EmailField(unique=True)
     phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$',
                                  message="Not a Phone Number")
-    phone_number = models.CharField(validators=[phone_regex], max_length=17, blank=True, unique=True)  # validators should be a list
+    phone_number = models.CharField(validators=[phone_regex], max_length=17, blank=True,
+                                    unique=True)  # validators should be a list
     address = models.CharField(max_length=100)
     consultation_fee = models.IntegerField()
     working_hours = models.ManyToManyField(ConsultationTime)
 
     patient_list = models.ManyToManyField(Parent, related_name="treats")
+
+    def get_doctor_name(self):
+        return str(self.name)
+
+    def get_doctor_aadhar_number(self):
+        return str(self.aadhar_number)
+
+    def get_doctor_email(self):
+        return str(self.email)
+
+    def get_doctor_specialization(self):
+        return str(self.specialization)
+
+    def get_doctor_exp_years(self):
+        return self.experience_years
+
+    def get_doctor_phone_number(self):
+        return str(self.phone_number)
+
+    def get_doctor_address(self):
+        return str(self.address)
+
+    def get_doctor_consultation_fees(self):
+        return self.consultation_fee
 
 
 class Child(models.Model):
