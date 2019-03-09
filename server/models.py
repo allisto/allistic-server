@@ -47,6 +47,21 @@ class Parent(models.Model):
                                     unique=True)  # validators should be a list
     address = models.CharField(max_length=100, null=True)
 
+    def get_parent_name(self):
+        return str(self.name)
+
+    def get_parent_aadhar_number(self):
+        return str(self.aadhar_number)
+
+    def get_parent_email(self):
+        return str(self.email)
+
+    def get_parent_phone_number(self):
+        return str(self.phone_number)
+
+    def get_parent_address(self):
+        return str(self.address)
+
 
 class Doctor(models.Model):
     MD = "MD"
