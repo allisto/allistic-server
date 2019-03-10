@@ -127,3 +127,15 @@ class Child(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_child_name(self):
+        return str(self.name)
+
+    def get_child_aadhar_number(self):
+        return str(self.aadhar_number)
+
+    def get_child_gender(self):
+        return str(self.gender)
+
+    def get_child_birthday(self):
+        return str(self.birthday)
