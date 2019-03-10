@@ -28,6 +28,12 @@ class Medicine(models.Model):
     def __str__(self):
         return self.name
 
+    def get_med_name(self):
+        return str(self.name)
+
+    def get_med_price(self):
+        return str(self.price)
+
 
 class Allergy(models.Model):
     name = models.CharField(max_length=30)
@@ -35,6 +41,9 @@ class Allergy(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_allergy_name(self):
+        return str(self.name)
 
 
 class Parent(models.Model):
