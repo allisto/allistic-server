@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'server',
     'cry_analyze',
+    'mobileapp',
     'rest_framework',
 ]
 
