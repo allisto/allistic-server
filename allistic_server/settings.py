@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'cry_analyze',
     'mobileapp',
     'rest_framework',
+    'core',
 ]
 
 MIDDLEWARE = [
